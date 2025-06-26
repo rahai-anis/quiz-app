@@ -1,0 +1,41 @@
+h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.answers button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.answers button:hover:not([disabled]) {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.correct {
+  background-color: rgba(76, 175, 80, 0.6) !important;
+}
+
+.wrong {
+  background-color: rgba(244, 67, 54, 0.6) !important;
+}
+
+button[disabled] {
+  cursor: default;
+  opacity: 0.7;
+}

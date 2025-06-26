@@ -1,0 +1,24 @@
+<div class="main">
+  <div class="glass-card">
+<div *ngIf="currentQuestion">
+  <h2 [innerHTML]="currentQuestion.question"></h2>
+
+  <div class="answers">
+    <button
+      *ngFor="let answer of currentQuestion.all_answers"
+      [innerHTML]="answer"
+      [disabled]="selectedAnswer !== null"
+      [ngClass]="{
+        'correct': selectedAnswer && isCorrect(answer),
+        'wrong': selectedAnswer && isWrong(answer)
+      }"
+      (click)="selectAnswer(answer)"
+    ></button>
+  </div>
+
+  <div *ngIf="showNextButton">
+    <button (click)="nextQuestion()">Question suivante</button>
+  </div>
+</div>
+ </div>
+</div>

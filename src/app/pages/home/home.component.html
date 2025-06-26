@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="glass-card">
+    <h1>Bienvenue dans le Quiz !</h1>
+    <p>Choisis une catégorie :</p>
+
+    <div class="category-list">
+      <button *ngFor="let cat of categories" (click)="selectedCategoryId = cat.id"
+        [ngClass]="{ selected: selectedCategoryId === cat.id }">
+        {{ cat.name }}
+      </button>
+
+    </div>
+
+    <button (click)="startQuiz()" [disabled]="!selectedCategoryId">
+      Démarrer le quiz
+    </button>
+  </div>
+</div>
